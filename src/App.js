@@ -32,13 +32,12 @@ function App() {
     setProvider(provider);
 
     const network = await provider.getNetwork();
-
-    const nft = new ethers.Contract(
+    const nftData = new ethers.Contract(
       config[network.chainId].nft.address,
       NFT,
       provider
     );
-    setNFT(nft);
+    setNFT(nftData);
   };
 
   const submitHandler = async (e) => {
